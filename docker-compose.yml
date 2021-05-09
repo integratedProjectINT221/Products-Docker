@@ -1,0 +1,61 @@
+version: '3.3'
+services:
+  db:
+    container_name: "products-db"
+    image: mysql/mysql-server
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'mydb'
+      # So you don't have to use root, but you can if you like
+      MYSQL_USER: 'user'
+      # You can use whatever password you like
+      MYSQL_PASSWORD: '091778@Project'
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: '091778@Project'
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_USER_HOST: '%'
+    ports:
+      # <Port exposed> : < MySQL Port running inside container>
+      - '3306'
+    # expose:
+      # Opens port 3306 on the container
+    #   - '3306'
+      # Where our data will be persisted
+    networks:
+      - product-network
+    volumes:
+      - ./my-db:/var/lib/mysql
+
+services:
+  products-backend:
+    build:
+      context: ../Products-Backend/
+    container_name: "products-backend"
+    image: products-backend
+    ports:
+      - "8081"
+    networks:
+      - product-network
+    depends_on:
+      - db
+
+services:
+  products-frontend:
+    build:
+      context: ../Products-Frontend/
+    container_name: "products-frontend"
+    image: products-frontend
+    depends_on:
+      - products-backend
+    # build: .
+    networks:
+      - product-network
+    expose:
+      - "8082"
+    ports:
+      - "8082:80"
+
+networks:
+  product-network: 
+     
+      
