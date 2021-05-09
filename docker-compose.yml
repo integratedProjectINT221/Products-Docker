@@ -1,5 +1,5 @@
 version: '3.3'
-# services:
+services:
 #   db:
 #     container_name: "products-db"
 #     image: mysql/mysql-server
@@ -26,7 +26,7 @@ version: '3.3'
 #     volumes:
 #       - ./my-db:/var/lib/mysql
 
-services:
+
   products-backend:
     build:
       context: ../Products-Backend/
@@ -39,7 +39,7 @@ services:
     # depends_on:
     #   - db
 
-services:
+
   products-frontend:
     build:
       context: ../Products-Frontend/
