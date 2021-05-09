@@ -55,7 +55,8 @@ services:
     ports:
       - "8082:80"
 
-networks:
-  product-network: 
+# networks:
+#   product-network:
+#     name: products-network
      
       
