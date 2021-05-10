@@ -22,7 +22,7 @@ services:
     #   - '3306'
       # Where our data will be persisted
     networks:
-      mynetwork:
+      product-network:
         ipv4_address: 172.20.0.12
     volumes:
       - ./my-db:/var/lib/mysql
@@ -36,7 +36,7 @@ services:
     ports:
       - "8081"
     networks:
-      mynetwork:
+      product-network:
         ipv4_address: 172.20.0.11
     depends_on:
       - db
@@ -51,7 +51,7 @@ services:
       - products-backend
     # build: .
     networks:
-      mynetwork:
+      product-network:
         ipv4_address: 172.20.0.10
     expose:
       - "8082"
