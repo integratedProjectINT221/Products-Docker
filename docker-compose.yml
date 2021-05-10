@@ -36,7 +36,7 @@ services:
       - "8081"
     networks:
       product-network:
-        ipv4_address: 172.24.0.226
+        # ipv4_address: 172.24.0.226
     depends_on:
       - db
 
@@ -51,7 +51,7 @@ services:
     # build: .
     networks:
       product-network:
-        ipv4_address: 172.24.0.10
+        # ipv4_address: 172.24.0.10
     expose:
       - "8082"
     ports:
