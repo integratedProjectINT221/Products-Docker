@@ -40,7 +40,7 @@ services:
       product-network:
         ipv4_address: 172.24.0.11
     depends_on:
-      - db
+      - products-frontend
 
 
   products-frontend:
@@ -49,7 +49,7 @@ services:
     container_name: "products-frontend"
     image: products-frontend
     depends_on:
-      - products-backend
+      - db
     # build: .
     networks:
       product-network:
