@@ -21,7 +21,8 @@ services:
       # Opens port 3306 on the container
     #   - '3306'
       # Where our data will be persisted
-    
+    networks:
+      product-network:
     volumes:
       - ./my-db:/var/lib/mysql
 
