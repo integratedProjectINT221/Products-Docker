@@ -34,13 +34,14 @@ services:
       context: ../Products-Backend/
     container_name: "products-backend"
     image: products-backend
+    restart: always
     ports:
       - "8081"
     networks:
       product-network:
         ipv4_address: 172.24.0.11
     depends_on:
-      - products-frontend
+      - db
 
 
   products-frontend:
@@ -49,7 +50,7 @@ services:
     container_name: "products-frontend"
     image: products-frontend
     depends_on:
-      - db
+      - products-backend
     # build: .
     networks:
       product-network:
