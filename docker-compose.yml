@@ -35,8 +35,7 @@ services:
     ports:
       - "8081"
     networks:
-      product-network:
-        # ipv4_address: 172.24.0.226
+      - products-network
     depends_on:
       - db
 
