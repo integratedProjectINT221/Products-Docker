@@ -22,7 +22,7 @@ services:
     #   - '3306'
       # Where our data will be persisted
     networks:
-      products-network:
+      - products-network
     volumes:
       - ./my-db:/var/lib/mysql
 
@@ -49,7 +49,7 @@ services:
       - products-backend
     # build: .
     networks:
-      products-network:
+      - products-network
         # ipv4_address: 172.24.0.10
     expose:
       - "8082"
@@ -60,8 +60,8 @@ networks:
   products-network:
     # external: true
     name: products-network
-    ipam:
-      config:
-        - subnet: 172.24.0.0/16
+    # ipam:
+    #   config:
+    #     - subnet: 172.24.0.0/16
      
       
