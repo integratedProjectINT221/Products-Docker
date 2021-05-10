@@ -33,7 +33,7 @@ services:
     container_name: "products-backend"
     image: products-backend
     ports:
-      - "8081"
+      - "8081:8081"
     networks:
       - product-network
     depends_on:
@@ -57,7 +57,7 @@ services:
 
 networks:
   product-network:
-    external: true
+    # external: true
     name: product-network
      
       
