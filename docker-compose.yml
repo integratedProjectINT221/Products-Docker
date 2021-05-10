@@ -3,7 +3,7 @@ services:
   db:
     container_name: "products-db"
     image: mysql/mysql-server
-    restart: always
+    restart: no
     environment:
       MYSQL_DATABASE: 'mydb'
       # So you don't have to use root, but you can if you like
