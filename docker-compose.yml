@@ -25,7 +25,7 @@ services:
       product-network:
         ipv4_address: 172.24.0.12
     volumes:
-      - ./my-db:/var/lib/mysql
+      # - ./my-db:/var/lib/mysql
       - ./mysqldump:/docker-entrypoint-initdb.d
 
 
