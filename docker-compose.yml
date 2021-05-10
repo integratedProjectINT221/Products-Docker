@@ -12,8 +12,8 @@ services:
       MYSQL_PASSWORD: '091778@Project'
       # Password for root access
       MYSQL_ROOT_PASSWORD: '091778@Project'
-      MYSQL_ROOT_HOST: '%'
-      MYSQL_USER_HOST: '%'
+      MYSQL_ROOT_HOST: '172.24.0.12'
+      MYSQL_USER_HOST: '172.24.0.12'
     ports:
       # <Port exposed> : < MySQL Port running inside container>
       - '3306'
