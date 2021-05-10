@@ -23,7 +23,7 @@ services:
       # Where our data will be persisted
     networks:
       product-network:
-        ipv4_address: 172.24.0.12
+        ipv4_address: 172.23.0.12
     volumes:
       - ./my-db:/var/lib/mysql
 
